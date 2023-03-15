@@ -30,6 +30,7 @@ const fetchRoomsData = async ()=>{
 const res = await fetch(`ROOMS.json`);
 const data = await res.json()
 showRoomsData(data)
+showDisplayRooms(data)
 }
 
 
