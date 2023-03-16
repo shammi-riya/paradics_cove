@@ -153,19 +153,19 @@
   <!-- pyment info modal -->
   
 <!-- Modal -->
-<div class="modal fade" id="examplePymentModal" tabindex="-1" aria-labelledby="exampleModalLabels" aria-hidden="true">
+<div class="modal fade " id="examplePymentModal" tabindex="-1" aria-labelledby="exampleModalLabels" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="exampleModalLabels">Modal title</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body"id="modalBody">
+      <div class="modal-body  "id="modalBody">
         ... 
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button id="setEmailBtn" type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>
@@ -190,12 +190,12 @@
       </div>
       <div class="col-md-4">
         <h5>Want to receive exclusive hotel offers? Subscribe to our newsletter</h5>
-        <form>
+       <div>
           <div class="input-group">
-            <input type="email" class="form-control" placeholder="Email Address" aria-label="Email Address">         
+            <input id="subscribeInput"  type="email" class="form-control" placeholder="Email Address" aria-label="Email Address">         
           </div>
-          <button type="submit" class="btn btn-primary mt-2">Subscribe</button>
-        </form>
+          <button onclick="subscribe()" type="submit" class="btn btn-primary mt-2">Subscribe</button>
+        </div>
         
       </div>
       <div class="col-md-2">
@@ -234,6 +234,7 @@
     <script src="./js/revewrange.js"></script>
     <script src="./js/cartOparation.js"></script>
     <script src="./js/handlwPyment.js"></script>
+    <script src="./js/subscribe.js"></script>
   </body>
 </html>
 
