@@ -4,16 +4,22 @@ let allRooms=[]
 const fetchRoomsDataa = async () => {
   const data = await fetch(`ROOMS.json`);
   const result = await data.json();
-  allRooms=result
+  console.log(result);
+ 
+   allRooms=result
   displayRoomsData(result);
 };
+
+
 
 fetchRoomsDataa();
 
 console.log(allRooms);
 
 const displayRoomsData = (rooms) =>{
+  // console.log(rooms);
     const roomsCard = document.getElementById("roomsCard");
+    document.getElementById("roomsCard").innerHTML=""
    rooms.forEach(room => {
     const {images,name,number_of_reviews,description,price,_id} = room
     
@@ -46,7 +52,7 @@ revewInput.addEventListener("input",()=>{
   document.getElementById("reviwCount").innerText= revewInputValu;
 
   const revewValu = allRooms.filter(range=>range.number_of_reviews >= revewInputValu)
-  console.log(displayRoomsData(revewValu));
+  displayRoomsData(revewValu);
 
 })
 
@@ -54,8 +60,8 @@ revewInput.addEventListener("input",()=>{
 document.getElementById('sort-by-price-btn').addEventListener('click', () =>{
   
   allRooms.sort((a,b)=>{
-  //  console.log(a.price.$numberDecimal,b.price.$numberDecimal);
      return parseFloat(a.price.$numberDecimal) > parseFloat(b.price.$numberDecimal)  ? 1: -1
  })
-//  console.log(displayRoomsData(allRooms));
+ displayRoomsData(allRooms)
+
 })
